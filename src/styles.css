@@ -1,0 +1,247 @@
+/* Cosmic Background Styles */
+.nebula-1 {
+  background: radial-gradient(ellipse at 20% 30%, rgba(88, 28, 135, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(30, 64, 175, 0.12) 0%, transparent 50%);
+  animation: nebulaDrift1 30s ease-in-out infinite;
+}
+
+.nebula-2 {
+  background: radial-gradient(ellipse at 70% 20%, rgba(157, 23, 77, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 30% 80%, rgba(6, 78, 59, 0.08) 0%, transparent 40%);
+  animation: nebulaDrift2 25s ease-in-out infinite reverse;
+}
+
+@keyframes nebulaDrift1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3%, 2%) scale(1.05);
+  }
+}
+
+@keyframes nebulaDrift2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-2%, 3%) scale(1.03);
+  }
+}
+
+/* Universe orbs */
+.universe-orb {
+  animation: float 20s ease-in-out infinite;
+  filter: blur(30px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Star particles */
+.star-particle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Scanlines for retro effect */
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* Hero animations */
+.hero-entrance {
+  animation: heroFadeIn 2s ease-out forwards;
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  text-shadow: 0 0 80px rgba(147, 112, 219, 0.4), 0 0 120px rgba(255, 182, 193, 0.2);
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%,
+  100% {
+    filter: brightness(1);
+    text-shadow: 0 0 80px rgba(147, 112, 219, 0.4), 0 0 120px rgba(255, 182, 193, 0.2);
+  }
+  50% {
+    filter: brightness(1.1);
+    text-shadow: 0 0 100px rgba(147, 112, 219, 0.6), 0 0 150px rgba(255, 182, 193, 0.3);
+  }
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: fadeInUp 2s ease-out 1.5s both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-dot {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 0.3;
+  }
+}
+
+/* Theory cards */
+.theory-card {
+  background: linear-gradient(135deg, rgba(15, 10, 25, 0.8) 0%, rgba(20, 15, 35, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+  animation: cardAppear 0.8s ease-out backwards;
+}
+
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.theory-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(20, 15, 35, 0.9) 0%, rgba(30, 20, 50, 0.7) 100%);
+}
+
+/* Evidence box */
+.evidence-box {
+  background: linear-gradient(180deg, rgba(15, 10, 30, 0.7) 0%, rgba(10, 8, 20, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 60px rgba(88, 28, 135, 0.15), inset 0 0 60px rgba(147, 112, 219, 0.05);
+}
+
+/* Implication cards */
+.implication-card {
+  padding: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
+.implication-card:hover {
+  transform: scale(1.05);
+}
+
+/* Custom selection color */
+::selection {
+  background: rgba(147, 112, 219, 0.4);
+  color: #fff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0612;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #581c87 0%, #1e40af 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7c3aed 0%, #3b82f6 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Font classes */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Grain overlay for texture */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .hero-title {
+    text-shadow: 0 0 40px rgba(147, 112, 219, 0.3), 0 0 60px rgba(255, 182, 193, 0.15);
+  }
+
+  .universe-orb {
+    filter: blur(20px);
+  }
+
+  .theory-card:hover {
+    transform: none;
+  }
+}
